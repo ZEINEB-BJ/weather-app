@@ -1,59 +1,68 @@
-# WeatherApp
+# 🌦️ Weather App - Angular 20+
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.2.
+Une **application météo** simple réalisée avec **Angular 20+**, utilisant les **standalone components** et la nouvelle API `provideHttpClient()`.  
+Le projet affiche la météo actuelle et les prévisions pour 5 jours, avec des **couleurs et icônes dynamiques** selon les conditions météorologiques.
 
-## Development server
+---
 
-To start a local development server, run:
+## 📸 Capture d’écran
+
+![Weather App](./images/weather.png)
+
+## 📌 Fonctionnalités
+
+- Recherche de la météo pour n’importe quelle ville.
+- Affichage de :
+  - Température actuelle
+  - Humidité
+  - Conditions météo (ex : nuageux, ensoleillé)
+  - Icône météo dynamique
+- Prévisions limitées à **une fois par jour (12h)**.
+- Couleur de fond des cartes **adaptée à la météo**.
+- Loader lors des requêtes API.
+- 100% compatible **Angular 20+ et standalone components**.
+
+---
+
+## 🛠️ Tech Stack
+
+- Angular 20+ (standalone components)
+- TypeScript
+- Bootstrap 5 pour le style
+- OpenWeatherMap API
+
+---
+
+## 🚀 Installation
+
+Cloner le dépôt :
 
 ```bash
+git clone <URL_DU_DEPOT>
+cd weather-app
+```
+
+Installer les dépendances :
+
+```bash
+
+npm install
+```
+
+Lancer l’application :
+
+```bash
+
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Ouvrir dans le navigateur :
 
 ```bash
-ng generate component component-name
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+🌐 API
+OpenWeatherMap
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Clé API gratuite .
