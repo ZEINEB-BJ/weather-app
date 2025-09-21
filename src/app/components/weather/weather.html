@@ -1,0 +1,40 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">🌦️ Application Météo</h2>
+
+  <div class="input-group mb-3">
+    <input [(ngModel)]="city" type="text" class="form-control" placeholder="Entrer une ville" />
+    <button class="btn btn-primary" (click)="searchWeather()">Rechercher</button>
+  </div>
+
+  <div *ngIf="loading" class="text-center">⏳ Chargement...</div>
+
+  <div *ngIf="errorMsg" class="alert alert-danger">{{ errorMsg }}</div>
+
+  <div
+    *ngIf="weatherData"
+    class="card p-3 shadow-sm mb-3 text-center"
+    [style.background-color]="getBackgroundColor()"
+  >
+    <h3>{{ weatherData.name }} - {{ weatherData.sys.country }}</h3>
+    <!--<img [src]="getIconUrl(weatherData.weather[0].icon)" alt="icone météo" />-->
+    <p>🌡️ Température : {{ weatherData.main.temp }} °C</p>
+    <p>💧 Humidité : {{ weatherData.main.humidity }} %</p>
+    <p>🌥️ Conditions : {{ weatherData.weather[0].description }}</p>
+  </div>
+
+  <div *ngIf="forecastData">
+    <h4>Prévisions par jour</h4>
+    <div class="row">
+      <div
+        *ngFor="let item of getDailyForecast()"
+        class="col-md-2 card p-2 m-1 text-center"
+        [style.background-color]="getForecastColor(item)"
+      >
+        <p>{{ item.dt_txt | date : 'dd/MM/yyyy' }}</p>
+        <img [src]="getIconUrl(item.weather[0].icon)" alt="icone" />
+        <p>🌡️ {{ item.main.temp }} °C</p>
+        <p>{{ item.weather[0].description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { WeatherComponent } from './components/weather/weather';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [FormsModule, WeatherComponent],
+  template: '<app-weather></app-weather>',
 })
 export class App {
   protected readonly title = signal('weather-app');
